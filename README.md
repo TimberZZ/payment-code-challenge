@@ -7,6 +7,8 @@ run the application.
 
 Visit [http://localhost:8080/api/home](http://localhost:8080/api/home) to see if it is started.
 
+Run test of the application, go to src/test/java/com/payment/paymentcodechallenge/service/PaymentServiceTest.java and run all test.
+
 ## 2. Call different API
 
 ### 1. getCards GET /api/getCards

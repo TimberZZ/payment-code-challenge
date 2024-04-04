@@ -53,7 +53,14 @@ This api can be called from postman as followed:
 If you want to see more about result meanings or other result codes appear, 
 please check here: [RESULT_CODE](https://docs.adyen.com/online-payments/build-your-integration/payment-result-codes/) to see more detailed information.
 
-## 3. Overall design
+## 3. Database
+
+The testDB.db file located in the root path is the DB in this application. It's drived by SQLite and embedded with the application. 
+
+### Data Schema
+
+
+## 4. Overall design
 
 ### 1. Java Spring Boot
 I choose Java Spring boot as the back-end in this application. 
@@ -67,6 +74,9 @@ There are several reasons for me to make the decision.
 2. It is a file-based database, which makes it easy to store and share databases across different systems.
 3. It is self-contained, which means that it does not require a separate server or daemon process to operate.
 
-Although it has drawbacks like can not support multi-thread, not suitable for large-scale, but in this application,
+Although it has drawbacks like can not support multi-thread, not suitable for large-scale, not secure for a payment system. But in this application,
 this light-weight DB win the trade-off. In this application, this embedded DB is easy to share and do not need much to be configured.
 That is the most reason I choose this DB.
+
+But in the real world payment system, we need to have strong consistency for our DB and we need to support transcations. For real world system,
+It's better to choose other relational Database such as MySql, PostgreSql, etc. 
